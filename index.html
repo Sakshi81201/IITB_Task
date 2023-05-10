@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="toolbar">
+          <div class="toolbar-heading">
+            <h2>Chemical Supplies</h2>
+          </div>
+          <div class="toolbar-icons">
+            <i
+              onclick="addRow()"
+              class="fas fa-plus-circle"
+              style="color: #0032c8; font-size:25px"
+            ></i>
+            <i
+              onclick="moveRowUp()"
+              class="fas fa-arrow-up"
+              style="color: #0032c8; font-size:25px"
+            ></i>
+            <i
+              onclick="moveRowDown()"
+              class="fas fa-arrow-down"
+              style="color: grey; font-size:25px"
+            ></i>
+            <i
+              onclick="deleteRow()"
+              class="fas fa-trash"
+              style="color: red; font-size:25px"
+            ></i>
+            <i
+              onclick="refreshData()"
+              class="fas fa-sync"
+              style="color: #0032c8; font-size:25px"
+            ></i>
+            <i
+              id="saveMessage"
+              onclick="saveData()"
+              class="fas fa-save"
+              style="color: #0032c8; font-size:25px"
+            ></i>
+          </div>
+        </div>
+
+        <table id="invoiceTable">
+          <thead>
+            <tr onclick="selectedRow(this)">
+              <th onclick="sortTable('id')">id</th>
+              <th onclick="sortTable('chemicalName')" class="chemical-name-header">Chemical name</th>
+              <th onclick="sortTable('vendor')">Vender</th>
+              <th onclick="sortTable('density')">Density</th>
+              <th onclick="sortTable('viscosity')">Viscosity</th>
+              <th onclick="sortTable('packaging')">Packaging</th>
+              <th onclick="sortTable('packSize')">Pack size</th>
+              <th onclick="sortTable('unit')">Unit</th>
+              <th onclick="sortTable('quantity')">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populate table rows dynamically using JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
